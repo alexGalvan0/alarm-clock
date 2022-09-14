@@ -2,7 +2,10 @@ const clockTime = document.getElementById('clockTime');
 const hourPicker = document.getElementById('hourPicker');
 const minPicker = document.getElementById('minPicker');
 const AddAlarm = document.getElementById('AddAlarm')
-const amPms = document.getElementsByClassName('amPm')
+const clockContainer = document.getElementById('clockContainer');
+const amPms = document.getElementsByClassName('amPm');
+const alarmAdded = document.getElementById('alarmAdded');
+const currentAlarmContainer = document.getElementById('currentAlarmContainer')
 
 
 const days = [
@@ -46,6 +49,20 @@ for (let m=1; m<60; m++){
     minPicker.appendChild(minChoices)
 }
 
+function getAlarm() {
+    let hourPicked = hourPicker.options[hourPicker.selectedIndex].value
+    let minPicked = minPicker.options[minPicker.selectedIndex].value
+    
+    for(amPm of amPms){
+        if(amPm.checked){
+           var partDayPicked = amPm.value;
+
+        }
+    }
+    const alarmInfo = [hourPicked, minPicked,partDayPicked]
+    return getAlarm
+}
+
 
 function setTime(){
     let date = new Date()
@@ -83,16 +100,6 @@ function setTime(){
 }
 setInterval(setTime,1000)
 
-
-AddAlarm.addEventListener('click', () => {
-    let hourPicked = hourPicker.options[hourPicker.selectedIndex].value
-    let minPicked = minPicker.options[minPicker.selectedIndex].value
-    console.log(hourPicked)
-    console.log(minPicked)
-    for (amPm of amPms){
-        if(amPm.checked){
-            console.log(amPm.value)
-        }
-    }
-   
+AddAlarm.addEventListener('click',() => {
+    currentAlarmContainer.classList.remove('hidden')
 })
