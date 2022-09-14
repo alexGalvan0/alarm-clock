@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.clock-container {
+    background-color: rgb(76, 121, 121);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}

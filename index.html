@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/main.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="clock-container">
+        <h1 class="main-header">ALARM CLOCK</h1>
+        <div class="clock-container">
+            <h3 id = "clockTime" class="clock"></h3>
+            <br>
+        </div>
+
+        <div class="alarm">
+            <form class="alarm-container">
+
+                <label for="hourPicker">TIME</label>
+                    <select id="hourPicker">
+                        <option></option>
+                    </select>
+
+                <label for="minPicker">: </label>
+                <select id="minPicker">
+                    <option></option>
+                </select>
+
+                <label for="AmRadio">AM</label>
+                <input type="radio" name="amPm" id="AmRadio">
+
+                <label for="PmRadio">PM</label>
+                <input type="radio" name="amPm" id="PmRadio">
+            </form>
+            <button id="AddAlarm">Add Alarm</button>
+        </div>
+    </div>
+</body>
+</html>
