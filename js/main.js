@@ -95,7 +95,7 @@ function setTime(){
     
     
     clockTime.textContent = `${days[day]}, ${months[month]} ${dateDay}, ${year} ${hour}:${minutes}:${seconds}`
-
+    return time
 
 }
 setInterval(setTime,1000)
