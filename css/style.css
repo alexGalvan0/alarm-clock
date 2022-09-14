@@ -1,6 +1,8 @@
 * {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: black;
 }
 
 body {
@@ -15,6 +17,7 @@ body {
 .clock-container {
     padding: 10px;
     border:5px solid black;
+    border-radius: 4px;
     background-color: rgb(226, 226, 226);
     display: flex;
     flex-direction: column;
@@ -26,6 +29,7 @@ body {
     background-color:rgb(226, 226, 226);
     padding: 10px;
     border:5px solid black;
+    border-radius: 4px;
     background-color: rgb(226, 226, 226);
 }
 
@@ -33,6 +37,20 @@ body {
     display: none;
 }
 
+#AddAlarm{
+    margin-top: 10px;
+    background-color: red;
+    border-color: red;
+    border-radius: 4px;
+}
+
 #alarmAdded{
     color: red;
 }
+
+
+
+
+
+
+

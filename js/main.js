@@ -7,7 +7,6 @@ const amPms = document.getElementsByClassName('amPm');
 const alarmAdded = document.getElementById('alarmAdded');
 const currentAlarmContainer = document.getElementById('currentAlarmContainer')
 
-
 const days = [
     'Sunday',
     'Monday',
@@ -33,7 +32,6 @@ const months = [
     'December'
    ]
 
-
 //adding hours to choose from 
 for (let h=1; h<13; h++){
     const hourChoices = document.createElement('option')
@@ -51,7 +49,11 @@ for (let m=1; m<60; m++){
 
 function getAlarm() {
     let hourPicked = hourPicker.options[hourPicker.selectedIndex].value
+
     let minPicked = minPicker.options[minPicker.selectedIndex].value
+    if (minPicked.toString().length == '1'){
+        minPicked = `0${minPicked}`
+    }
     
     for(amPm of amPms){
         if(amPm.checked){
@@ -59,12 +61,18 @@ function getAlarm() {
 
         }
     }
+
+    const alarmInfos = {
+                            'hourPicked': hourPicked,
+                            'minPicked': minPicked,
+                            'partDayPicked': partDayPicked
+                       }
     const alarmInfo = [hourPicked, minPicked,partDayPicked]
-    return alarmInfo
+    return alarmInfos
 }
 
 
-function setTime(){
+function getTime(){
     let date = new Date()
     
     let day = date.getDay();
@@ -92,15 +100,40 @@ function setTime(){
     if (seconds.toString().length == '1'){
         seconds = `0${seconds}`
     }
-    
-    
-    clockTime.textContent = `${days[day]}, ${months[month]} ${dateDay}, ${year} ${hour}:${minutes}:${seconds}`
-    return time
+    const time = [day, dateDay, month, year, hour, minutes, seconds]
+    const times = {
+                        'day': day,
+                        'dateDay': dateDay,
+                        'month': month,
+                        'year': year,
+                        'hour': hour,
+                        'minutes': minutes,
+                        'seconds':seconds
+
+                  }
+    return times
 
 }
+function setTime(){
+    clockTime.textContent = `${days[getTime()['day']]}, ${months[getTime()['month']]} ${getTime()['dateDay']}, ${getTime()['year']}  ${getTime()['hour']}:${getTime()['minutes']}:${getTime()['seconds']}`
+}
+
 setInterval(setTime,1000)
 
 AddAlarm.addEventListener('click',() => {
     currentAlarmContainer.classList.remove('hidden')
-    alarmAdded.textContent = `ALARM: ${getAlarm()[0]} : ${getAlarm()[1]} ${getAlarm()[2]}`
+    alarmAdded.textContent = `${getAlarm()['hourPicked']}:${getAlarm()['minPicked']} ${getAlarm()['partDayPicked']}`
+    if (alarmAdded.textContent.includes('undefined')){
+        alarmAdded.textContent = 'Add an alarm!'
+    }
+
+    console.log(parseInt(getAlarm()['hourPicked']) + 12 )
+    console.log(getTime())
+
+
+    Notification.requestPermission().then(perm => {
+        if(perm === 'granted'){
+            new Notification ('Wake up!')
+        }
+    })
 })
