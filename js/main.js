@@ -62,13 +62,13 @@ function getAlarm() {
         }
     }
 
-    const alarmInfos = {
+    const alarmInfo = {
                             'hourPicked': hourPicked,
                             'minPicked': minPicked,
-                            'partDayPicked': partDayPicked
+                            'partDayPicked': partDayPicked,
                        }
-    const alarmInfo = [hourPicked, minPicked,partDayPicked]
-    return alarmInfos
+
+    return alarmInfo
 }
 
 
@@ -127,13 +127,18 @@ AddAlarm.addEventListener('click',() => {
         alarmAdded.textContent = 'Add an alarm!'
     }
 
-    console.log(parseInt(getAlarm()['hourPicked']) + 12 )
-    console.log(getTime())
+    if (getAlarm()['partDayPicked'] == 'PM'){
+        var hr = parseInt(getAlarm()['hourPicked']) + 12 
+        console.log(hr.toString())
+    } else {
+       var hr = getAlarm()['hourPicked']
+    } 
 
-
-    Notification.requestPermission().then(perm => {
-        if(perm === 'granted'){
-            new Notification ('Wake up!')
-        }
-    })
+    if (hr == parseInt(getTime()['hour'])){
+        Notification.requestPermission().then(perm => {
+            if(perm === 'granted'){
+                new Notification ('Wake up!')
+            }
+        })
+    }
 })
