@@ -2,6 +2,33 @@ const clockTime = document.getElementById('clockTime');
 const hourPicker = document.getElementById('hourPicker');
 const minPicker = document.getElementById('minPicker');
 const AddAlarm = document.getElementById('AddAlarm')
+const amPms = document.getElementsByClassName('amPm')
+
+
+const days = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+ ]
+
+const months = [
+    'January',
+    'Februray',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+   ]
 
 
 //adding hours to choose from 
@@ -18,32 +45,6 @@ for (let m=1; m<60; m++){
     minChoices.textContent = m;
     minPicker.appendChild(minChoices)
 }
-
-
-const days = [
-                'Sunday',
-                'Monday',
-                'Tuesday',
-                'Wednesday',
-                'Thursday',
-                'Friday',
-                'Saturday'
-             ]
-
-const months = [
-                'January',
-                'Februray',
-                'March',
-                'April',
-                'May',
-                'June',
-                'July',
-                'August',
-                'September',
-                'October',
-                'November',
-                'December'
-               ]
 
 
 function setTime(){
@@ -85,8 +86,13 @@ setInterval(setTime,1000)
 
 AddAlarm.addEventListener('click', () => {
     let hourPicked = hourPicker.options[hourPicker.selectedIndex].value
-   let minPicked = minPicker.options[minPicker.selectedIndex].value
-   console.log(hourPicked)
-   console.log(minPicked)
+    let minPicked = minPicker.options[minPicker.selectedIndex].value
+    console.log(hourPicked)
+    console.log(minPicked)
+    for (amPm of amPms){
+        if(amPm.checked){
+            console.log(amPm.value)
+        }
+    }
    
 })
