@@ -60,7 +60,7 @@ function getAlarm() {
         }
     }
     const alarmInfo = [hourPicked, minPicked,partDayPicked]
-    return getAlarm
+    return alarmInfo
 }
 
 
@@ -102,4 +102,5 @@ setInterval(setTime,1000)
 
 AddAlarm.addEventListener('click',() => {
     currentAlarmContainer.classList.remove('hidden')
+    alarmAdded.textContent = `ALARM: ${getAlarm()[0]} : ${getAlarm()[1]} ${getAlarm()[2]}`
 })
