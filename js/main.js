@@ -87,12 +87,19 @@ function getAlarm() {
 
 
 AddAlarmBtn.addEventListener('click',() => {
-    AlarmContainer.classList.remove('hidden')
-    alarmAdded.textContent = getAlarm()
+    if (new Date(getTime()['date'] /1000) - new Date(getAlarm())/1000 > 0 ){
+        alert('Alarm time has already passed')
+        AlarmContainer.classList.add('hidden')
+    } else {
+        AlarmContainer.classList.remove('hidden')
+        alarmAdded.textContent = getAlarm()
+        alarmAdded.style.textDecoration = 'none';
+    }
 })
 
 function checkAlarm() {
-    if (new Date(getTime()['date'] /1000) - new Date(getAlarm())/1000 == 0 ){
+    if (new Date(getTime()['date'] /1000) - new Date(getAlarm())/1000 == 1 ){
+        alarmAdded.style.textDecoration = 'line-through';
         alert('Wake Up!')
     }
 }
