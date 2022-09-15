@@ -7,12 +7,8 @@
     <title>Alarm Clock</title>
 
     <link rel="stylesheet" href="./css/style.css">
-
     <script src="./js/main.js" defer></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="clock-container" id="clockContainer">
@@ -23,28 +19,11 @@
         
 
         <div class="alarm">
-            <form class="alarm-container">
-
-                <label for="hourPicker">TIME</label>
-                    <select id="hourPicker">
-                        <option></option>
-                    </select>
-
-                <label for="minPicker">: </label>
-                <select id="minPicker">
-                    <option></option>
-                </select>
-
-                <label for="AmRadio">AM</label>
-                <input class="amPm" type="radio" name="amPm" id="AmRadio" value="AM">
-
-                <label for="PmRadio">PM</label>
-                <input class="amPm" type="radio" name="amPm" id="PmRadio" value="PM">
-            </form>
-            <button id="AddAlarm">Add Alarm</button>
+            <input  id="AlarmInput" type="datetime-local">
+            <button id="AddAlarmBtn">Add Alarm</button>
         </div>
     </div>
-    <div id="currentAlarmContainer" class="hidden">
+    <div id="AlarmContainer" class="hidden">
         <h4>ALARM:</h4>
         <p id="alarmAdded"></p>
     </div>

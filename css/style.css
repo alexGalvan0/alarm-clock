@@ -24,7 +24,7 @@ body {
     text-align: center;
 
 }
-#currentAlarmContainer{
+#AlarmContainer{
     margin-top: 2rem;
     background-color:rgb(226, 226, 226);
     padding: 10px;
@@ -37,7 +37,7 @@ body {
     display: none;
 }
 
-#AddAlarm{
+#AddAlarmBtn{
     margin-top: 10px;
     background-color: red;
     border-color: red;
