@@ -87,7 +87,10 @@ function getAlarm() {
 
 
 AddAlarmBtn.addEventListener('click',() => {
-    if (new Date(getTime()['date'] /1000) - new Date(getAlarm())/1000 > 0 ){
+    if(new Date(getAlarm()) == 'Invalid Date'){
+        alert('Please add alarm')
+
+    } else if (new Date(getTime()['date'] /1000) - new Date(getAlarm())/1000 > 0 ){
         alert('Alarm time has already passed')
         AlarmContainer.classList.add('hidden')
     } else {
