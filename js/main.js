@@ -57,14 +57,14 @@ function getTime(){
     }
 
     const times = {     
-                        'date':date,
-                        'day': day,
-                        'dateDay': dateDay,
-                        'month': month,
-                        'year': year,
-                        'hour': hour,
-                        'minutes': minutes,
-                        'seconds':seconds
+                        date,
+                        day,
+                        dateDay,
+                        month,
+                        year,
+                        hour,
+                        minutes,
+                        seconds
                   }
     return times
 }

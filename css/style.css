@@ -7,8 +7,6 @@
 
 body {
     height: 100vh;
-    background-image: url('../img/nightstand-svgrepo-com\ \(1\).svg');
-    background-repeat: no-repeat;
     background-color: rgb(76, 121, 121);
     display: flex;
     flex-direction: column;
@@ -18,19 +16,19 @@ body {
 
 .clock-container {
     padding: 10px;
-    border:5px solid rgb(162, 162, 162);
+    border:8px solid rgb(162, 162, 162);
     border-radius: 4px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(28, 28, 28);
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 #AlarmContainer{
     margin-top: 2rem;
-    padding: 10px;
+    text-align: center;
     border:5px solid rgb(162, 162, 162);
     border-radius: 4px;
-    background-color:black;
+    background-color:rgb(28, 28, 28);
 }
 
 .hidden {
@@ -54,3 +52,17 @@ input{
     cursor: pointer;
 }
 
+.bookshelve {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.clock-container{ 
+    position: relative;
+    top:11.1rem;
+    margin: auto;
+
+}
+img{
+    width: 28.4rem;
+    margin-top: 0px;
+}
