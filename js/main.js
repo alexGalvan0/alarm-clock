@@ -3,7 +3,7 @@ const AddAlarmBtn = document.getElementById('AddAlarmBtn'); //btn to add alarm
 const alarmAdded = document.getElementById('alarmAdded'); // alarm added displayed
 const AlarmInput = document.getElementById('AlarmInput'); //input field to add alarm
 const AlarmContainer = document.getElementById('AlarmContainer') // alarm container default hidden untill alarm added
-
+const milStand = document.getElementsByClassName("milStand");
 
 const days = [
     'Sunday',
@@ -29,6 +29,9 @@ const months = [
     'November',
     'December'
    ]
+
+
+
 
 
 //Getting time returning times object

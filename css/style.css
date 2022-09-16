@@ -41,6 +41,7 @@ body {
     border: none;
     color: black ;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 #alarmAdded{
