@@ -30,10 +30,6 @@ const months = [
     'December'
    ]
 
-
-
-
-
 //Getting time returning times object
 function getTime(){
     let date = new Date()  
@@ -76,19 +72,20 @@ function getTime(){
 function setTime(){
     clockTime.textContent = `${days[getTime()['day']]}, ${months[getTime()['month']]} ${getTime()['dateDay']}, ${getTime()['year']}  ${getTime()['hour']}:${getTime()['minutes']}:${getTime()['seconds']}`
 }
-// Updates time on webpage each second
+
 
 
 //Alarm functionality
 
 
-
+//get alarmSelected inputed by user
 function getAlarm() {
     const alarmSelected = AlarmInput.value
     return alarmSelected
 }
 
-
+//display alarm when user has selected when they want to wake up
+//data validation to ensure valid alarm has been seleceted. 
 AddAlarmBtn.addEventListener('click',() => {
     if(new Date(getAlarm()) == 'Invalid Date'){
         alert('Please add alarm')
@@ -109,6 +106,8 @@ function checkAlarm() {
         alert('Wake Up!')
     }
 }
-
+// check alarm each second
 setInterval(checkAlarm, 1000)
+
+// Updates time on webpage each second
 setInterval(setTime,1000)

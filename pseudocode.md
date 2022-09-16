@@ -39,6 +39,7 @@ ELSE IF DateTime > alarmTime
 
 ELSE IF alarmTime = blank
     Display 'Add an alarm'
+    cross out alarm inputed
 
 ELSE
     pass
