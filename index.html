@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+    <div class="bookshelve">
+        <img src="./img/nightstand-svgrepo-com (1).svg" alt="">
+        <div class="clock-container" id="clockContainer">
+            <h1 class="main-header">ALARM CLOCK</h1>
+            
+                <h3 id = "clockTime" class="clock"></h3>
+                <br>
+            
+
+            <div class="alarm">
+                <input  id="AlarmInput" type="datetime-local">
+                <button id="AddAlarmBtn">Add Alarm</button>
+            </div>
+        </div>
+        <div id="AlarmContainer" class="hidden">
+            <h4>ALARM:</h4>
+            <p id="alarmAdded"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
