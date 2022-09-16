@@ -4,7 +4,7 @@
 ### <u>INIT Variables:</u>
 > - **CREATE** Clock
 > - **CREATE** Alarm
-> - **CREATE** amPm Toggle
+> - **CREATE** standard/military Toggle
 
 ### <u>PROPERTIES OF OBJECTS:</u>
 > - **Clock**
